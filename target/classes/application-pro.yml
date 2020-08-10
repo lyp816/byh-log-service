@@ -1,0 +1,22 @@
+server:
+  port: 9102
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://172.16.0.165:3306/ih_card_service?useUnicode=true&amp;characterEncoding=UTF-8mb4
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: byh2019!!...
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl.auto: none
+        show_sql: true
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://discover:1111/eureka/

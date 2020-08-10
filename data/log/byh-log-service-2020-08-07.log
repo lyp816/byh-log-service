@@ -1,0 +1,376 @@
+2020-08-07 17:22:22:576  INFO [byh-log-service] 12483 [           main] s.c.a.AnnotationConfigApplicationContext [,,] : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@659499f1: startup date [Fri Aug 07 17:22:22 CST 2020]; root of context hierarchy
+2020-08-07 17:22:23:184  INFO [byh-log-service] 12483 [           main] f.a.AutowiredAnnotationBeanPostProcessor [,,] : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2020-08-07 17:22:23:277  INFO [byh-log-service] 12483 [           main] trationDelegate$BeanPostProcessorChecker [,,] : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fa6dc166] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-07 17:22:23:705  INFO [byh-log-service] 12483 [           main] c.c.c.ConfigServicePropertySourceLocator [,,] : Fetching config from server at : http://localhost:8888
+2020-08-07 17:22:23:867  INFO [byh-log-service] 12483 [           main] c.c.c.ConfigServicePropertySourceLocator [,,] : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2020-08-07 17:22:23:868  WARN [byh-log-service] 12483 [           main] c.c.c.ConfigServicePropertySourceLocator [,,] : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/byh-log-service/test/syt": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2020-08-07 17:22:23:876  INFO [byh-log-service] 12483 [           main] com.ebaiyihui.LogServiceApplication      [,,] : The following profiles are active: dev
+2020-08-07 17:22:23:925  INFO [byh-log-service] 12483 [           main] ConfigServletWebServerApplicationContext [,,] : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@495b0487: startup date [Fri Aug 07 17:22:23 CST 2020]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@659499f1
+2020-08-07 17:22:24:816  WARN [byh-log-service] 12483 [           main] o.m.s.mapper.ClassPathMapperScanner      [,,] : No MyBatis mapper was found in '[com.ebaiyihui]' package. Please check your configuration.
+2020-08-07 17:22:24:901  INFO [byh-log-service] 12483 [           main] .s.d.r.c.RepositoryConfigurationDelegate [,,] : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-07 17:22:24:955  INFO [byh-log-service] 12483 [           main] .s.d.r.c.RepositoryConfigurationDelegate [,,] : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-07 17:22:25:332  INFO [byh-log-service] 12483 [           main] o.s.cloud.context.scope.GenericScope     [,,] : BeanFactory id=5215ed6e-e4bf-386b-8955-154ce08f2295
+2020-08-07 17:22:25:359  INFO [byh-log-service] 12483 [           main] f.a.AutowiredAnnotationBeanPostProcessor [,,] : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2020-08-07 17:22:25:577  INFO [byh-log-service] 12483 [           main] trationDelegate$BeanPostProcessorChecker [,,] : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$de53be69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-07 17:22:25:713  WARN [byh-log-service] 12483 [           main] ConfigServletWebServerApplicationContext [,,] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting 'pointcut name' at character position 1
+@com.ebaiyihui.log.annotation(com.ebaiyihui.log.annotation.Log)
+ ^^^
+
+2020-08-07 17:22:25:723  INFO [byh-log-service] 12483 [           main] ConditionEvaluationReportLoggingListener [,,] : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-07 17:22:25:744 ERROR [byh-log-service] 12483 [           main] o.s.boot.SpringApplication               [,,] : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting 'pointcut name' at character position 1
+@com.ebaiyihui.log.annotation(com.ebaiyihui.log.annotation.Log)
+ ^^^
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:490)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:236)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:708)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1242)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1230)
+	at com.ebaiyihui.LogServiceApplication.main(LogServiceApplication.java:21)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting 'pointcut name' at character position 1
+@com.ebaiyihui.log.annotation(com.ebaiyihui.log.annotation.Log)
+ ^^^
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:581)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1246)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1096)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:254)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1060)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1033)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:484)
+	... 14 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting 'pointcut name' at character position 1
+@com.ebaiyihui.log.annotation(com.ebaiyihui.log.annotation.Log)
+ ^^^
+
+	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334)
+	at org.aspectj.weaver.reflect.InternalUseOnlyPointcutParser.resolvePointcutExpression(InternalUseOnlyPointcutParser.java:36)
+	at org.aspectj.weaver.reflect.Java15ReflectionBasedReferenceTypeDelegate.getDeclaredPointcuts(Java15ReflectionBasedReferenceTypeDelegate.java:309)
+	at org.aspectj.weaver.ReferenceType.getDeclaredPointcuts(ReferenceType.java:884)
+	at org.aspectj.weaver.ResolvedType$PointcutGetter.get(ResolvedType.java:243)
+	at org.aspectj.weaver.ResolvedType$PointcutGetter.get(ResolvedType.java:241)
+	at org.aspectj.weaver.Iterators$4$1.hasNext(Iterators.java:213)
+	at org.aspectj.weaver.Iterators$4.hasNext(Iterators.java:230)
+	at org.aspectj.weaver.ResolvedType.findPointcut(ResolvedType.java:743)
+	at org.aspectj.weaver.patterns.ReferencePointcut.resolveBindings(ReferencePointcut.java:148)
+	at org.aspectj.weaver.patterns.Pointcut.resolve(Pointcut.java:189)
+	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:331)
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:225)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:288)
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:320)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:126)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:95)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:76)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:352)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:304)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1698)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573)
+	... 36 common frames omitted
+
+2020-08-07 17:28:06:803  INFO [byh-log-service] 12495 [           main] s.c.a.AnnotationConfigApplicationContext [,,] : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@729d991e: startup date [Fri Aug 07 17:28:06 CST 2020]; root of context hierarchy
+2020-08-07 17:28:07:312  INFO [byh-log-service] 12495 [           main] f.a.AutowiredAnnotationBeanPostProcessor [,,] : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2020-08-07 17:28:07:408  INFO [byh-log-service] 12495 [           main] trationDelegate$BeanPostProcessorChecker [,,] : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$25465ea9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-07 17:28:07:886  INFO [byh-log-service] 12495 [           main] c.c.c.ConfigServicePropertySourceLocator [,,] : Fetching config from server at : http://localhost:8888
+2020-08-07 17:28:08:176  INFO [byh-log-service] 12495 [           main] c.c.c.ConfigServicePropertySourceLocator [,,] : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2020-08-07 17:28:08:177  WARN [byh-log-service] 12495 [           main] c.c.c.ConfigServicePropertySourceLocator [,,] : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/byh-log-service/test/syt": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2020-08-07 17:28:08:180  INFO [byh-log-service] 12495 [           main] com.ebaiyihui.LogServiceApplication      [,,] : The following profiles are active: dev
+2020-08-07 17:28:08:216  INFO [byh-log-service] 12495 [           main] ConfigServletWebServerApplicationContext [,,] : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4d9ac0b4: startup date [Fri Aug 07 17:28:08 CST 2020]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@729d991e
+2020-08-07 17:28:09:376  WARN [byh-log-service] 12495 [           main] o.m.s.mapper.ClassPathMapperScanner      [,,] : No MyBatis mapper was found in '[com.ebaiyihui]' package. Please check your configuration.
+2020-08-07 17:28:09:563  INFO [byh-log-service] 12495 [           main] .s.d.r.c.RepositoryConfigurationDelegate [,,] : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-07 17:28:09:650  INFO [byh-log-service] 12495 [           main] .s.d.r.c.RepositoryConfigurationDelegate [,,] : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-07 17:28:10:132  INFO [byh-log-service] 12495 [           main] o.s.cloud.context.scope.GenericScope     [,,] : BeanFactory id=5215ed6e-e4bf-386b-8955-154ce08f2295
+2020-08-07 17:28:10:167  INFO [byh-log-service] 12495 [           main] f.a.AutowiredAnnotationBeanPostProcessor [,,] : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2020-08-07 17:28:10:374  INFO [byh-log-service] 12495 [           main] trationDelegate$BeanPostProcessorChecker [,,] : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$92c5bac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-07 17:28:10:625  INFO [byh-log-service] 12495 [           main] trationDelegate$BeanPostProcessorChecker [,,] : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$25465ea9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-07 17:28:11:622  INFO [byh-log-service] 12495 [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  [,,] : Tomcat initialized with port(s): 1024 (http)
+2020-08-07 17:28:11:673  INFO [byh-log-service] 12495 [           main] o.apache.catalina.core.StandardService   [,,] : Starting service [Tomcat]
+2020-08-07 17:28:11:673  INFO [byh-log-service] 12495 [           main] org.apache.catalina.core.StandardEngine  [,,] : Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-08-07 17:28:11:680  INFO [byh-log-service] 12495 [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   [,,] : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/mac/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2020-08-07 17:28:12:376  INFO [byh-log-service] 12495 [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       [,,] : Initializing Spring embedded WebApplicationContext
+2020-08-07 17:28:12:377  INFO [byh-log-service] 12495 [ost-startStop-1] o.s.web.context.ContextLoader            [,,] : Root WebApplicationContext: initialization completed in 4161 ms
+2020-08-07 17:28:12:522  INFO [byh-log-service] 12495 [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  [,,] : Servlet dispatcherServlet mapped to [/]
+2020-08-07 17:28:12:530  INFO [byh-log-service] 12495 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   [,,] : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-08-07 17:28:12:531  INFO [byh-log-service] 12495 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   [,,] : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-08-07 17:28:12:531  INFO [byh-log-service] 12495 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   [,,] : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-08-07 17:28:12:532  INFO [byh-log-service] 12495 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   [,,] : Mapping filter: 'requestContextFilter' to: [/*]
+2020-08-07 17:28:13:051  INFO [byh-log-service] 12495 [           main] com.alibaba.druid.pool.DruidDataSource   [,,] : {dataSource-1} inited
+2020-08-07 17:29:28:689 ERROR [byh-log-service] 12495 [eate-1296153103] com.alibaba.druid.pool.DruidDataSource   [,,] : create connection SQLException, url: jdbc:mysql://123.57.93.190:13507/ih_card_service?useUnicode=true&amp;characterEncoding=UTF-8mb4, errorCode 0, state 08S01
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1513)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2466)
+Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 15 common frames omitted
+
+2020-08-07 17:30:44:169 ERROR [byh-log-service] 12495 [eate-1296153103] com.alibaba.druid.pool.DruidDataSource   [,,] : create connection SQLException, url: jdbc:mysql://123.57.93.190:13507/ih_card_service?useUnicode=true&amp;characterEncoding=UTF-8mb4, errorCode 0, state 08S01
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1513)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2466)
+Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 15 common frames omitted
+
+2020-08-07 17:32:00:372 ERROR [byh-log-service] 12495 [eate-1296153103] com.alibaba.druid.pool.DruidDataSource   [,,] : create connection SQLException, url: jdbc:mysql://123.57.93.190:13507/ih_card_service?useUnicode=true&amp;characterEncoding=UTF-8mb4, errorCode 0, state 08S01
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1513)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2466)
+Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 15 common frames omitted
+
+2020-08-07 17:33:16:402 ERROR [byh-log-service] 12495 [eate-1296153103] com.alibaba.druid.pool.DruidDataSource   [,,] : create connection SQLException, url: jdbc:mysql://123.57.93.190:13507/ih_card_service?useUnicode=true&amp;characterEncoding=UTF-8mb4, errorCode 0, state 08S01
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1513)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2466)
+Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 15 common frames omitted
+
+2020-08-07 17:34:32:243 ERROR [byh-log-service] 12495 [eate-1296153103] com.alibaba.druid.pool.DruidDataSource   [,,] : create connection SQLException, url: jdbc:mysql://123.57.93.190:13507/ih_card_service?useUnicode=true&amp;characterEncoding=UTF-8mb4, errorCode 0, state 08S01
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1513)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2466)
+Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 15 common frames omitted
+
+2020-08-07 17:35:48:018 ERROR [byh-log-service] 12495 [eate-1296153103] com.alibaba.druid.pool.DruidDataSource   [,,] : create connection SQLException, url: jdbc:mysql://123.57.93.190:13507/ih_card_service?useUnicode=true&amp;characterEncoding=UTF-8mb4, errorCode 0, state 08S01
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1513)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2466)
+Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 15 common frames omitted
+
