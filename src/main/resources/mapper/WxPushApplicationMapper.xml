@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ebaiyihui.log.dao.WxPushApplicationMapper">
+
+    <select id="selectByClientCode" resultType="com.ebaiyihui.log.entity.WxPushApplicationEntity">
+        select
+        wpa.appid as appId,
+        wpa.secret,
+        wpa.id
+        from wx_push_application wpa where
+        wpa.client_code=#{clientCode,jdbcType=VARCHAR}
+    </select>
+</mapper>

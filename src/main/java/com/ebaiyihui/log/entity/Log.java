@@ -21,8 +21,8 @@ public class Log {
     /** 方法名 */
     private String method;
 
-    /** 参数 */
-    private String params;
+    /** 输入参数 */
+    private String reqParams;
 
     /** 日志类型 */
     private String logType;
@@ -32,6 +32,9 @@ public class Log {
 
     /** 地址 */
     private String address;
+
+    /** 返回参数 */
+    private String resParams;
 
     /** 浏览器  */
     private String browser;

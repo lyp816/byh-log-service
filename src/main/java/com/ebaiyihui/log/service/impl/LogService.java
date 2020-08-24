@@ -53,16 +53,34 @@ public class LogService {
         assert log != null;
         adminLog.setRequestIp(ip);
 
+        Object result= null;
+        try {
+            result = joinPoint.proceed();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+        String respParam = postHandle(result);
+        log.info("返回参数:【{}】",respParam);
+
         //String loginPath = "login";
         adminLog.setAddress(StringUtil.getCityInfo(adminLog.getRequestIp()));
         adminLog.setMethod(methodName);
         adminLog.setUserViewId(userViewId);
-        adminLog.setParams(params.toString() + " }");
+        adminLog.setReqParams(params.toString() + " }");
         adminLog.setBrowser(browser);
         adminLog.setLogActionType(logActionType);
+        adminLog.setResParams(respParam);
         log.info("参数组装ok，准存mongo------>{}", JSON.toJSONString(adminLog));
         mongoTemplate.save(adminLog);
 
+    }
+
+
+    private String postHandle(Object retVal) {
+        if(null == retVal){
+            return "";
+        }
+        return JSON.toJSONString(retVal);
     }
 
 }
