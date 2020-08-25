@@ -4,7 +4,7 @@ spring:
   application:
     name: byh-log-service
   profiles:
-    active: dev
+    active: local
   cloud:
     config:
       name: byh-log-service
@@ -21,16 +21,6 @@ spring:
       password: byh@2020
       database: patient-service
       authentication-database: admin
-
-#mybatis:
-#  configuration:
-#    map-underscore-to-camel-case: true
-#  mapper-locations: classpath:dao/*.xml
-
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 #测试环境日志地址
 logging:

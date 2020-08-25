@@ -1,8 +1,8 @@
 package com.ebaiyihui.log.aspect;
 
-import com.alibaba.druid.util.DruidWebUtils;
 import com.ebaiyihui.log.entity.Log;
-import com.ebaiyihui.log.service.impl.LogService;
+import com.ebaiyihui.log.service.impl.LogServiceImpl;
+import com.ebaiyihui.log.util.IpAddressUtil;
 import com.ebaiyihui.log.util.RequestHolder;
 import com.ebaiyihui.log.util.StringUtil;
 import com.ebaiyihui.log.util.ThrowableUtil;
@@ -24,12 +24,12 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 @Aspect
 @Slf4j
-public class LogAspect {
-    private final LogService logService;
+public class LogAspectMongo {
+    private final LogServiceImpl logService;
 
     ThreadLocal<Long> currentTime = new ThreadLocal<>();
 
-    public LogAspect(LogService logService) {
+    public LogAspectMongo(LogServiceImpl logService) {
         this.logService = logService;
     }
 
@@ -55,7 +55,7 @@ public class LogAspect {
         currentTime.remove();
         HttpServletRequest request = RequestHolder.getHttpServletRequest();
         String userViewId=request.getHeader("userId");
-        logService.save(userViewId, StringUtil.getBrowser(request), DruidWebUtils.getRemoteAddr(request),joinPoint, log);
+        logService.save(userViewId, StringUtil.getBrowser(request), IpAddressUtil.getIpAddr(request),joinPoint, log);
         return result;
     }
 
@@ -73,7 +73,7 @@ public class LogAspect {
         log.setExceptionDetail(ThrowableUtil.getStackTrace(e).getBytes());
         HttpServletRequest request = RequestHolder.getHttpServletRequest();
         String userViewId=request.getHeader("userId");
-        logService.save(userViewId, StringUtil.getBrowser(request), DruidWebUtils.getRemoteAddr(request), (ProceedingJoinPoint)joinPoint, log);
+        logService.save(userViewId, StringUtil.getBrowser(request), IpAddressUtil.getIpAddr(request), (ProceedingJoinPoint)joinPoint, log);
     }
 
 }
