@@ -9,6 +9,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Method;
@@ -25,6 +26,7 @@ import java.util.List;
  **/
 @Service
 @Slf4j
+@Async
 public class LogServiceImpl implements LogService {
 
     @Autowired
