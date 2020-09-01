@@ -2,7 +2,6 @@ package com.ebaiyihui.log.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.ebaiyihui.log.entity.Log;
-import com.ebaiyihui.log.service.LogService;
 import com.ebaiyihui.log.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -27,12 +26,12 @@ import java.util.List;
 @Service
 @Slf4j
 @Async
-public class LogServiceImpl implements LogService {
+public class LogServiceImpl{
 
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @Override
+
     public void save(String userViewId, String browser, String ip, ProceedingJoinPoint joinPoint, Log adminLog) {
         log.info("进入纪录日志service");
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
@@ -68,7 +67,11 @@ public class LogServiceImpl implements LogService {
         log.info("返回参数:【{}】",respParam);
 
         //String loginPath = "login";
-        adminLog.setAddress(StringUtil.getCityInfo(adminLog.getRequestIp()));
+        try {
+            adminLog.setAddress(StringUtil.getCityInfo(adminLog.getRequestIp()));
+        }catch (Exception e){
+            adminLog.setAddress(ip);
+        }
         adminLog.setMethod(methodName);
         adminLog.setUserViewId(userViewId);
         adminLog.setReqParams(params.toString() + " }");
