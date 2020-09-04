@@ -66,7 +66,6 @@ public class LogServiceImpl{
         String respParam = postHandle(result);
         log.info("返回参数:【{}】",respParam);
 
-        //String loginPath = "login";
         try {
             adminLog.setAddress(StringUtil.getCityInfo(adminLog.getRequestIp()));
         }catch (Exception e){
