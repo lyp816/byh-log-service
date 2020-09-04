@@ -67,13 +67,17 @@ public class LogAspectMongo {
      */
     @AfterThrowing(pointcut = "logPointcut()", throwing = "e")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
-        log.info("========错误信息======>{}", ThrowableUtil.getStackTrace(e));
-        Log log = new Log("ERROR",System.currentTimeMillis() - currentTime.get());
-        currentTime.remove();
-        log.setExceptionDetail(ThrowableUtil.getStackTrace(e).getBytes());
-        HttpServletRequest request = RequestHolder.getHttpServletRequest();
-        String userViewId=request.getHeader("userId");
-        logService.save(userViewId, StringUtil.getBrowser(request), IpAddressUtil.getIpAddr(request), (ProceedingJoinPoint)joinPoint, log);
+        try {
+            log.info("========错误信息======>{}", ThrowableUtil.getStackTrace(e));
+            Log log = new Log("ERROR",System.currentTimeMillis() - currentTime.get());
+            currentTime.remove();
+            log.setExceptionDetail(ThrowableUtil.getStackTrace(e).getBytes());
+            HttpServletRequest request = RequestHolder.getHttpServletRequest();
+            String userViewId=request.getHeader("userId");
+            logService.save(userViewId, StringUtil.getBrowser(request), IpAddressUtil.getIpAddr(request), (ProceedingJoinPoint)joinPoint, log);
+        }catch (Exception e1){
+
+        }
     }
 
 }
